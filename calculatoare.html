@@ -12,9 +12,9 @@
         <nav>
             <ul>
                 <li>
-                    <form action="search.html" method="get" class="search-bar">
-                        <input type="text" name="query" placeholder="Caută..." aria-label="Caută">
-                        <button type="submit">🔍</button>
+                    <form class="search-bar" onsubmit="return false;">
+                        <input type="text" id="searchInput" placeholder="Caută în pagină..." aria-label="Caută">
+                        <button type="button" onclick="searchInPage()">🔍</button>
                     </form>
                 </li>
                 <li><a href="index.html">Acasă</a></li>
