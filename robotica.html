@@ -6,6 +6,50 @@
     <title>Robotică - Electronică Modernă</title>
     <link rel="stylesheet" href="styleB.css">
 </head>
+    <script>
+function searchInPage() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.trim();
+    const main = document.querySelector('main');
+    if (!main) return;
+
+    // Elimină evidențierile vechi
+    main.querySelectorAll('.highlight').forEach(el => {
+        el.replaceWith(document.createTextNode(el.textContent));
+    });
+
+    if (!filter) return;
+
+    // Evidențiază textul găsit
+    const regex = new RegExp(filter, 'gi');
+    function highlight(node) {
+        if (node.nodeType === 3) { // text node
+            const match = node.nodeValue.match(regex);
+            if (match) {
+                const span = document.createElement('span');
+                span.className = 'highlight';
+                span.textContent = match[0];
+                const parts = node.nodeValue.split(regex);
+                const frag = document.createDocumentFragment();
+                for (let i = 0; i < parts.length; i++) {
+                    frag.appendChild(document.createTextNode(parts[i]));
+                    if (i < parts.length - 1) frag.appendChild(span.cloneNode(true));
+                }
+                node.replaceWith(frag);
+            }
+        } else if (node.nodeType === 1 && node.childNodes && !['SCRIPT', 'STYLE'].includes(node.tagName)) {
+            node.childNodes.forEach(highlight);
+        }
+    }
+    highlight(main);
+}
+
+// Stil pentru evidențiere
+const style = document.createElement('style');
+style.innerHTML = `.highlight { background: yellow; color: black; }`;
+document.head.appendChild(style);
+</script>
+    
 <body>
     <header>
         <div class="logo">Electronică Modernă</div>
