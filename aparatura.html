@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aparatură de Consum - Electronică Modernă</title>
+    <link rel="stylesheet" href="styleC.css">
+</head>
+<body>
+    <script>
+    function openCategory(categoryId) {
+        const tabs = document.querySelectorAll('.tab-content');
+        const buttons = document.querySelectorAll('.tab-button');
+
+        // Ascunde toate tab-urile
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        // Elimină clasa activă de pe toate butoanele
+        buttons.forEach(button => button.classList.remove('active'));
+
+        // Afișează tab-ul selectat
+        document.getElementById(categoryId).classList.add('active');
+
+        // Adaugă clasa activă pe butonul selectat
+        event.currentTarget.classList.add('active');
+    }
+</script>
+    <header>
+        <div class="logo">Electronică Modernă</div>
+        <nav>
+            <ul>
+                <li>
+                    <form action="search.html" method="get" class="search-bar">
+                        <input type="text" name="query" placeholder="Caută..." aria-label="Caută">
+                        <button type="submit">🔍</button>
+                    </form>
+                </li>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="calculatoare.html">Calculatoare</a></li>
+                <li><a href="robotica.html">Robotică</a></li>
+                <li><a href="telecomunicatii.html">Telecomunicații</a></li>
+                <li><a href="aparatura.html" class="active">Aparatură de Consum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Aparatură Electronică de Consum</h1>
+            <p>Dispozitive electronice pentru uz zilnic și divertisment</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Categorii de Aparatură de Consum</h2>
+            <div class="category-tabs">
+                <button class="tab-button active" onclick="openCategory('audio')">Audio</button>
+                <button class="tab-button" onclick="openCategory('video')">Video</button>
+                <button class="tab-button" onclick="openCategory('gaming')">Gaming</button>
+                <button class="tab-button" onclick="openCategory('smart')">Smart Home</button>
+            </div>
+
+            <div id="audio" class="tab-content" style="display: block;">
+                <h3>Echipamente Audio</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="imagini/headphones.jpg" alt="Căști">
+                        <h4>Căști</h4>
+                        <p>De la căști simple la modele high-end cu anulare de zgomot.</p>
+                        <div class="brands">Producători: Sony, Bose, Sennheiser, JBL</div>
+                    </div>
+                    <div class="product-card">
+                        <img src="imagini/speakers.jpg" alt="Boxe">
+                        <h4>Boxe</h4>
+                        <p>Boxe portabile, sisteme home theater și echipamente profesionale.</p>
+                        <div class="brands">Producători: Harman Kardon, Bang & Olufsen, Yamaha</div>
+                    </div>
+                    <div class="product-card">
+                        <img src="imagini/soundbar.jpg" alt="Soundbar">
+                        <h4>Soundbar-uri</h4>
+                        <p>Soluții compacte pentru îmbunătățirea sunetului TV.</p>
+                        <div class="brands">Producători: Samsung, LG, Sonos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="video" class="tab-content">
+                <h3>Echipamente Video</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="imagini/tv.jpg" alt="Televizoare">
+                        <h4>Televizoare</h4>
+                        <p>Smart TV-uri 4K/8K cu tehnologii OLED, QLED și MicroLED.</p>
+                        <div class="brands">Producători: Samsung, LG, Sony, TCL</div>
+                    </div>
+                    <div class="product-card">
+                        <img src="imagini/projector.jpg" alt="Proiectoare">
+                        <h4>Proiectoare</h4>
+                        <p>Pentru home cinema și prezentări profesionale.</p>
+                        <div class="brands">Producători: Epson, BenQ, Optoma</div>
+                    </div>
+                    <div class="product-card">
+                        <img src="imagini/camera.jpg" alt="Camere video">
+                        <h4>Camere video</h4>
+                        <p>Camere 4K, action cam și echipamente de streaming.</p>
+                        <div class="brands">Producători: Canon, Sony, GoPro</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="gaming" class="tab-content">
+                <h3>Echipamente Gaming</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="imagini/console.jpg" alt="Console">
+                        <h4>Console de jocuri</h4>
+                        <p>PlayStation, Xbox și Nintendo Switch.</p>
+                        <div class="brands">Producători: Sony, Microsoft, Nintendo</div>
+                    </div>
+                    <div class="product-card">
+                        <img src="imagini/gaming-pc.jpg" alt="PC Gaming">
+                        <h4>PC-uri Gaming</h4>
+                        <p>Sisteme puternice pentru jocuri la rezoluții înalte.</p>
+                        <div class="brands">Producători: Alienware, ASUS ROG, MSI</div>
+                    </div>
+                    <div class="product-card">
+                        <img src="imagini/accessories.jpg" alt="Accesorii Gaming">
+                        <h4>Accesorii Gaming</h4>
+                        <p>Tastaturi, mouse-uri, volane și scaune gaming.</p>
+                        <div class="brands">Producători: Razer, Logitech, Corsair</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="smart" class="tab-content">
+                <h3>Dispozitive Smart Home</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="imagini/assistant.jpg" alt="Asistenți vocali">
+                        <h4>Asistenți vocali</h4>
+                        <p>Dispozitive controlate vocal pentru casă inteligentă.</p>
+                        <div class="brands">Producători: Amazon (Alexa), Google (Assistant), Apple (HomePod)</div>
+                    </div>
+                    <div class="product-card">
+                        <img src="imagini/security.jpg" alt="Securitate smart">
+                        <h4>Sisteme de securitate</h4>
+                        <p>Camere de supraveghere, sonerie video și sisteme de alarmă.</p>
+                        <div class="brands">Producători: Ring, Nest, Arlo</div>
+                    </div>
+                    <div class="product-card">
+                        <img src="imagini/iot.jpg" alt="Dispozitive IoT">
+                        <h4>Dispozitive IoT</h4>
+                        <p>Termostate, becuri inteligente și electrocasnice conectate.</p>
+                        <div class="brands">Producători: Philips Hue, TP-Link, Belkin</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Producători Importanți</h2>
+            <div class="manufacturer-list">
+                <div class="manufacturer">
+                    <img src="imagini/samsung-logo.jpg" alt="Samsung">
+                    <div>
+                        <h3>Samsung</h3>
+                        <p>Lider mondial în televizoare, smartphone-uri și electrocasnice. Fondat în 1938 în Coreea de Sud.</p>
+                        <a href="https://www.samsung.com"><p>to Samsung --></p></a>
+                    </div>
+                </div>
+                <div class="manufacturer">
+                    <img src="imagini/sony-logo.jpg" alt="Sony">
+                    <div>
+                        <h3>Sony</h3>
+                        <p>Cunoscut pentru echipamente audio/video de înaltă calitate. Fondat în 1946 în Japonia.</p>
+                        <a href="https://www.samsung.com"><p>to Samsung --></p></a>
+                    </div>
+                </div>
+                <div class="manufacturer">
+                    <img src="imagini/lg-logo.jpg" alt="LG">
+                    <div>
+                        <h3>LG Electronics</h3>
+                        <p>Producător de televizoare, electrocasnice și dispozitive mobile. Subsidiara coreeană a LG Corp.</p>
+                        <a href="https://www.samsung.com"><p>to Samsung --></p></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Urmărește-ne pe rețelele sociale:</p>
+        <ul>
+            <li>
+            <a href="https://www.facebook.com/hubelectronica" target="_blank">
+                <img src="https://z-m-static.xx.fbcdn.net/rsrc.php/v4/yD/r/5D8s-GsHJlJ.png" alt="Facebook" style="width: 20px; height: 20px;"> Facebook
+            </a>
+            </li>
+            <li>
+            <a href="https://www.instagram.com/hub_electronica" target="_blank">
+                <img src="https://img.favpng.com/3/4/21/social-media-instagram-login-facebook-advertising-png-favpng-0dVyFL6zcmYQigNTu75EUjDJ0.jpg" alt="Instagram" style="width: 20px; height: 20px;"> Instagram
+            </a>
+            </li>
+            <!--linkurile de asemenea sunt false, a si imaginile sunt copiate cu codul susa de pe inernet deci...-->
+        </ul>
+        <p>2023 Electronică Modernă. Toate drepturile ne-existente.</p>
+        <p>Contact: <a href="mailto:contact@electronica.ro">contact@electronica.ro</a> | Telefon: +40 123 456 789</p>
+        <p>Adresă: Strada Radu Teoharie 3,Targu Neamt, România</p>
+    </footer>
+</body>
+</html>

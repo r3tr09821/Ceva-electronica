@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronică-Pagina Principală</title>
+    <link rel="stylesheet" href="style.css">
+    <style>/* Reset și stiluri de bază */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f9ff;
+}
+
+/* Header */
+header {
+    background-color: #0078d7;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background-color: #005bb5;
+}
+
+/* Bara de căutare */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #f4f9ff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    flex: 1;
+    padding: 5px;
+    border-radius: 3px;
+    color: #333;
+}
+
+.search-bar input::placeholder {
+    color: #aaa;
+}
+
+.search-bar button {
+    background: #0078d7;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-bar button:hover {
+    background: #005bb5;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e6f2ff;
+    color: #0078d7;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Categories Section */
+.categories {
+    padding: 20px;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 1.8rem;
+    color: #0078d7;
+    margin-bottom: 20px;
+}
+
+.category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.category-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.category-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.category-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #0078d7;
+}
+
+.category-card p {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 0 10px 10px;
+}
+
+/* Latest News Section */
+.latest-news {
+    padding: 20px;
+    text-align: center;
+}
+
+.latest-news h2 {
+    font-size: 1.8rem;
+    color: #0078d7;
+    margin-bottom: 20px;
+}
+
+.latest-news article {
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.latest-news article h3 {
+    font-size: 1.2rem;
+    color: #0078d7;
+    margin-bottom: 10px;
+}
+
+.latest-news article p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Aside Section */
+aside {
+    padding: 20px;
+    background: #f4f9ff;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+aside h2 {
+    font-size: 1.5rem;
+    color: #0078d7;
+    margin-bottom: 20px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0078d7;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+aside ul li a:hover {
+    background-color: #005bb5;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #0078d7;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .category-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-card {
+        width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .latest-news article {
+        width: 90%;
+    }
+}</style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Electronică</div>
+        <nav>
+            <ul>
+                <li>
+                    <form action="search.html" method="get" class="search-bar">
+                        <input type="text" name="query" placeholder="Caută..." aria-label="Caută">
+                        <button type="submit">🔍</button>
+                    </form>
+                </li>
+                <li><a href="index.html" class="active">Acasă</a></li>
+                <li><a href="calculatoare.html">Calculatoare</a></li>
+                <li><a href="robotica.html">Robotică</a></li>
+                <li><a href="telecomunicatii.html">Telecomunicații</a></li>
+                <li><a href="aparatura.html">Aparatură de Consum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Exploră Lumea Electronicii</h1>
+            <p>Descoperă cele mai recente tehnologii și inovații în domeniul electronic!!</p>
+        </section>
+
+        <section class="categories">
+            <h2>Domenii de Electronică</h2>
+            <div class="category-grid">
+                <a href="calculatoare.html" class="category-card">
+                    <img src="https://st3.depositphotos.com/6787284/13602/i/450/depositphotos_136028818-stock-photo-custom-built-gaming-computer.jpg" alt="Calculatoare">
+                    <h3>Calculatoare</h3>
+                    <p>De la procesoare la supercalculatoare</p>
+                </a>
+                <a href="robotica.html" class="category-card">
+                    <img src="https://i0.wp.com/revista-ferma.ro/wp-content/uploads/2023/05/robotul-nero_b.jpg" alt="Robotică">
+                    <h3>Robotică</h3>
+                    <p>Automatizare și inteligență artificială</p>
+                </a>
+                <a href="telecomunicatii.html" class="category-card">
+                    <img src="https://media.istockphoto.com/id/1306156001/ro/fotografie/turn-de-telecomunicatii-cu-puncte-de-plasa-particule-sclipitoare-pentru-tehnologia.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=di2l_PLH-kfahhJOGiKb6t2y33zFg9MwRy2I255O-Hc=" alt="Telecomunicații">
+                    <h3>Telecomunicații</h3>
+                    <p>Rețele și tehnologii de comunicare</p>
+                </a>
+                <a href="aparatura.html" class="category-card">
+                    <img src="https://media.istockphoto.com/id/1433689490/ro/fotografie/camera-stilului-anilor-1970-cu-televizor.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=zZgHGfpmYhuDOy4Z56mGGvDL2HFmNmi8Mwq_M8QTISU=" alt="Aparatură de Consum">
+                    <h3>Aparatură de Consum</h3>
+                    <p>Dispozitive electronice pentru uz zilnic</p>
+                    <!-- imaginile sunt copiate cu codul susa de pe inernet-->
+                </a>
+            </div>
+        </section>
+
+        <section class="latest-news">
+            <h2>Știri Recente</h2>
+            <article>
+                <h3>Noile procesoare quantum</h3>
+                <p>Intel a anunțat lansarea unei noi generații de procesoare quantum care promit să revoluționeze calculul...</p>
+            </article>
+            <article>
+                <h3>Roboții în sănătate</h3>
+                <p>În 2025, utilizarea roboților în domeniul sănătății a cunoscut o expansiune semnificativă, atât în România, cât și la nivel global, datorită progreselor în inteligența artificială și robotică. Iată câteva dintre cele mai recente inovații:
+                    <br>
+                    <b>&#9;Roboți în spitale și spitale inteligente</b>
+                    Spitalul Județean de Urgență Sibiu va beneficia de un sistem robotic pentru prepararea medicamentelor citostatice destinate pacienților oncologici, îmbunătățind astfel siguranța și eficiența tratamentelor .
+                    În Târgu Mureș, se va deschide primul spital inteligent din România, un proiect pilot care va integra dosare electronice ale pacienților, telemedicină, securitate cibernetică și roboți chirurgicali, alături de realitate virtuală pentru instruirea personalului medical .
+                    <br>
+                    <b>&#9;Roboți umanoizi în intervenții medicale</b>
+                    Un studiu recent a demonstrat că roboții umanoizi pot efectua proceduri medicale complexe, precum ventilația și puncțiile ghidate ecografic, prin teleoperare. Acești roboți pot replica cu succes aspecte esențiale ale intervențiilor medicale umane, deși există încă provocări legate de forța necesară pentru anumite proceduri și sensibilitatea senzorilor .
+                </p>
+            </article>
+            <article>
+                <h3>Tehnologia 5G și viitorul comunicațiilor</h3>
+                <p>Tehnologia 5G continuă să transforme modul în care comunicăm, oferind viteze mai mari și latență redusă. Aceasta deschide calea pentru aplicații precum vehicule autonome, orașe inteligente și realitate augmentată. În plus, 5G facilitează dezvoltarea IoT (Internet of Things), conectând miliarde de dispozitive și creând rețele mai eficiente și mai inteligente.</p>
+            </article>
+            <article>
+                <h3>Energia regenerabilă și electronica</h3>
+                <p>Progresele în electronica de putere au permis dezvoltarea unor soluții mai eficiente pentru captarea și utilizarea energiei solare și eoliene. Inovațiile în baterii și stocarea energiei sunt esențiale pentru un viitor sustenabil. De exemplu, noile tehnologii de baterii cu litiu-sulf și stocarea pe bază de hidrogen promit să reducă costurile și să crească eficiența energetică. În plus, integrarea electronicii în rețelele inteligente ajută la optimizarea consumului de energie.</p>
+            </article>
+            <article>
+                <h3>Inteligența artificială în electronică</h3>
+                <p>Inteligența artificială (IA) joacă un rol tot mai important în proiectarea și optimizarea dispozitivelor electronice. De la algoritmi care îmbunătățesc performanța circuitelor integrate până la utilizarea IA în diagnosticarea defecțiunilor, această tehnologie revoluționează industria electronicii. În plus, IA este utilizată în dezvoltarea senzorilor inteligenți și a sistemelor autonome, deschizând noi oportunități pentru inovație.</p>
+            </article>
+            <!--informatiile sunt luate random deci nu cred ca sunt reale-->
+        </section>
+    </main>
+    <aside>
+        <h2>Resurse Utile</h2>
+        <ul>
+            <li><a href="https://www.electronică.ro" target="_blank">Asociația Română de Electronică</a></li>
+            <li><a href="https://www.iar.ro" target="_blank">Institutul Național de Cercetare-Dezvoltare în Electronică</a></li>
+            <li><a href="https://www.itu.int" target="_blank">Uniunea Internațională a Telecomunicațiilor</a></li>
+        </ul>
+    </aside>
+    <footer>
+        <p>Urmărește-ne pe rețelele sociale:</p>
+        <ul>
+            <li>
+            <a href="https://www.facebook.com/hubelectronica" target="_blank">
+                <img src="https://z-m-static.xx.fbcdn.net/rsrc.php/v4/yD/r/5D8s-GsHJlJ.png" alt="Facebook" style="width: 20px; height: 20px;"> Facebook
+            </a>
+            </li>
+            <li>
+            <a href="https://www.instagram.com/hub_electronica" target="_blank">
+                <img src="https://img.favpng.com/3/4/21/social-media-instagram-login-facebook-advertising-png-favpng-0dVyFL6zcmYQigNTu75EUjDJ0.jpg" alt="Instagram" style="width: 20px; height: 20px;"> Instagram
+            </a>
+            </li>
+            <!--linkurile de asemenea sunt false, a si imaginile sunt copiate cu codul susa de pe inernet deci...-->
+        </ul>
+        <p>2023 Electronică Modernă. Toate drepturile ne-existente.</p>
+        <p>Contact: <a href="mailto:contact@electronica.ro">contact@electronica.ro</a> | Telefon: +40 123 456 789</p>
+        <p>Adresă: Strada Radu Teoharie 3,Targu Neamt, România</p>
+    </footer>
+</body>
+</html>
